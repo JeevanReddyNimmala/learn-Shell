@@ -2,10 +2,10 @@
 user_id=$(id -u)
 log_folder="/var/log/shell_practice"
 log_file="${log_folder}/${0}.log"
-R = "\e[31m"
-G = "\e[32m"
-Y = "\e[33m"
-N = "\e[0m"
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 
 if [ $user_id -ne 0 ] ; then
     echo "Run this with SUDO access"
