@@ -34,4 +34,4 @@ Validate $? "Mysql Installation"
 echo "script completed ececution at $(date +"%F %T")"
 
 echo "$log_folder"
-echo "log_file"
+echo "$log_file"
