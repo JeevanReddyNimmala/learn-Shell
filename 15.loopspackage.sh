@@ -22,11 +22,10 @@ fi
 
 for package in $@
 do
-{
-    echo "going to istall $package"
-    dnf install $package -y
+
+    echo "going to istall ${package}"
+    dnf install $package -y &>> $log_file
     validate $? "intalling ${package}"
-}
 done
  
 echo "script completed ececution at $(date +"%F %T")"
