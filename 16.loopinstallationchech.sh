@@ -23,7 +23,7 @@ fi
 for package in $@
 do
     dnf list intsalled $package &>> $log_file
-    if [ $? -ne 0]; then
+    if [ $? -ne 0 ]; then
     echo "going to istall ${package}"
     dnf install ${package} -y &>> $log_file
     echo "dnf install ${package} -y &>> $log_file"
