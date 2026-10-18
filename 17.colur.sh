@@ -13,14 +13,14 @@ if [ $user_id -ne 0 ] ; then
 fi
 
 mkdir -p $log_folder
-echo "script started ececution at $(date +"%F %T")"
+echo  "script started ececution at $(date +"%F %T")"
 
 validate (){
     if [ $1 -ne 0 ] ; then
-    echo "${2} ...[$R}FAILED[$N]" | tee -a $log_file
+    echo  -e "${2} ...[$R}FAILED[$N]" | tee -a $log_file
     exit 1
 else
-    echo "${2} .. [$G]SUCCUSS[$N]" | tee -a $log_file
+    echo  -e "${2} .. [$G]SUCCUSS[$N]" | tee -a $log_file
 fi
 }
 
