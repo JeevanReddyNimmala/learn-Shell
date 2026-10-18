@@ -17,10 +17,10 @@ echo  "script started ececution at $(date +"%F %T")"
 
 validate (){
     if [ $1 -ne 0 ] ; then
-    echo  -e "${2} ...[$R}FAILED[$N]" | tee -a $log_file
+    echo  -e "${2} ...{$R}FAILED{$N}" | tee -a $log_file
     exit 1
 else
-    echo  -e "${2} .. [$G]SUCCUSS[$N]" | tee -a $log_file
+    echo  -e "${2} .. {$G}SUCCUSS{$N}" | tee -a $log_file
 fi
 }
 
@@ -33,7 +33,7 @@ do
     echo "dnf install ${package} -y &>> $log_file"
     validate $? "intalling ${package}"
     else
-    echo "$package already insttalled....[$Y]SKIPPING[$N]"
+    echo "$package already insttalled....{$Y}SKIPPING{$N}"
     fi
 done
  
