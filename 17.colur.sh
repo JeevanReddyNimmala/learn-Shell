@@ -26,8 +26,8 @@ fi
 
 for package in $@
 do
-    dnf list intsalled $package &>> $log_file
-    echo "list intsalled $package &>> $log_file"
+    dnf list intsalled ${package} &>> $log_file
+    echo "list intsalled ${package} &>> $log_file"
     if [ $? -ne 0 ]; then
     echo "going to istall ${package}"
     dnf install ${package} -y &>> $log_file
