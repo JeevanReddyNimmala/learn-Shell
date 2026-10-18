@@ -10,4 +10,4 @@ declare -i COUNT=5 ## declaring as intiger
 COUNT=COUNT+1
 echo "Count is $COUNT"
 FRUITS=("Apple" "Banana" "pappaya")
-echo "Fruits are $[@]"
+echo "Fruits are ${FRUITS[@]}"
