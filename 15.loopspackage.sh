@@ -11,7 +11,7 @@ fi
 mkdir -p $log_folder
 echo "script started ececution at $(date +"%F %T")"
 
-Validate (){
+validate (){
     if [ $1 -ne 0 ] ; then
     echo "${2} ...FAILED" | tee -a $log_file
     exit 1
