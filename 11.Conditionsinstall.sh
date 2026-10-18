@@ -3,7 +3,23 @@ user_id=$(id -u)
 
 if [ $user_id -ne 0 ] ; then
 echo "Run this with SUDO access"
-exit 1
+exixxt 1
 fi
+
 echo "Proceed"
-dnf install nginx -y
+dnf install nginxxx -y
+if [ $? -ne 0 ] ; then
+echo "nginx installation failed"
+exit 1
+else
+echo "nginx installation sucess"
+fi
+
+dnf install mysql -y
+if [ $? -ne 0 ] ; then
+echo "mysql installation failed"
+exit 1
+else
+echo "Mysql installation complete"
+
+echo "still proceeding"
