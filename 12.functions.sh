@@ -11,10 +11,10 @@ Validate (){
     echo "${2} failed"
     exit 1
 else
-    echo "{2} sucess"
-
-}
+    echo "${2} success"
 fi
+}
+
 
 echo "Proceed"
 
