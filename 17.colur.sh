@@ -33,7 +33,7 @@ do
     echo "dnf install ${package} -y &>> $log_file"
     validate $? "intalling ${package}"
     else
-    echo "$package already insttalled....{$Y}SKIPPING{$N}"
+    echo -e "${package} already insttalled....{$Y}SKIPPING{$N}"
     fi
 done
  
