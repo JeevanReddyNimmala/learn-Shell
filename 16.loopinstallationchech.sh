@@ -30,6 +30,7 @@ do
     validate $? "intalling ${package}"
     else
     echo "$package already insttalled"
+    fi
 done
  
 echo "script completed ececution at $(date +"%F %T")"
