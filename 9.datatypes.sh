@@ -11,3 +11,6 @@ COUNT=COUNT+1
 echo "Count is $COUNT"
 FRUITS=("Apple" "Banana" "pappaya")
 echo "Fruits are ${FRUITS[@]}"
+echo "First Fruit ${$FRUIT[0]}"
+echo "Second Fruit ${$FRUIT[1]}"
+echo "Third Fruit ${$FRUIT[2]}"
