@@ -24,6 +24,8 @@ for package in $@
 do
 {
     echo "going to istall $package"
+    dnf install $package -y
+    validate $? "intalling $package"
 }
 done
 
