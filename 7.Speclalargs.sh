@@ -9,7 +9,7 @@ echo "Path of the script: $(realpath $0)"
 echo  "present direcrory of the scripr $PWD"
 echo "home path of the current script $HOME"
 echo "PID of the current script: $$ "
-sleep 10;
+sleep 10 &
 echo "show the PID of the bachkground running procees:$!"
 wait $! ## wait till $! command execution
 echo "Line number:$LINENO"
