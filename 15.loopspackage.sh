@@ -25,10 +25,10 @@ do
 {
     echo "going to istall $package"
     dnf install $package -y
-    validate $? "intalling $package"
+    validate $? "intalling ${package}"
 }
 done
-
+ 
 echo "script completed ececution at $(date +"%F %T")"
 
 echo "$log_folder"
