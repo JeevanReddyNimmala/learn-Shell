@@ -3,6 +3,6 @@
 present_country="India"
 
 echo "am in : $present_country"
-echo "PID od $0 : SS"
+echo "PID od $0 : $$"
 
 sh 21.script2.sh
