@@ -5,4 +5,4 @@ present_country="India"
 echo "am in : $present_country"
 echo "PID od $0 : $$"
 
-sh 21.script2.sh
+source ./sh 21.script2.sh
