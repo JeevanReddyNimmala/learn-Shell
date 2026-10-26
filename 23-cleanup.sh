@@ -37,5 +37,6 @@ while IFS= read -r line
 do
     echo "File is goining to be deleted : $line"
     rm -f "$line"
+    echo "File deleted: $line"
 done <<< "$fileS_to_delete"
 
