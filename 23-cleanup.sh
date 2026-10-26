@@ -9,10 +9,14 @@ source_dir=$1
 days=${2:-14} #if user doesn pass any days it will take 14days as default
 
 usage(){
-    echo -e "USAGE :: ${R} [SOUTCE_DIR] [days(optional default 14days)]${N}"
+    echo -e "USAGE :: ${R} [SOURCE_DIR] [days(optional default 14days)]${N}"
 }
 
 if [ -z "$source_dir" ] ; then
     echo "ERROR :: Missing parameter"
     usage
+fi
+
+if [ ! -d "$source_dir" ] ; then
+    echo -e "ERROR :: ${R} "$source_dir" doe not exists${N}"
 fi
