@@ -1,42 +1,40 @@
-#!bin/bash
+#!/bin/bash
 
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
-
 source_dir=$1
-days=${2:-14} #if user doesn pass any days it will take 14days as default
+days=${2:-14} # if user is not passing days, we will take 14 days as default
 
 usage(){
-    echo -e "USAGE :: ${R} [SOURCE_DIR] [days(optional default 14days)]${N}"
+    echo -e "${R}USAGE:: $0 [SOURCE_DIR] [days(Optional, default to 14 days)]${N}"
     exit 1
 }
 
-if [ -z "$source_dir" ] ; then
-    echo "ERROR :: Missing parameter"
+if [ -z "$source_dir" ]; then
+    echo "ERROR:: Missing parameters"
     usage
 fi
 
-if [ ! -d "$source_dir" ] ; then
-    echo -e "ERROR :: ${R} "$source_dir" directory does not exists${N}"
+if [ ! -d "$source_dir" ]; then
+    echo -e "${R}ERROR:: $source_dir does not exist${N}"
 fi
 
-echo "Scaning files older than " $days" in "$source_dir" directory"
-
+echo "Scanning files older than $days in $source_dir"
 files_to_delete=$(find $source_dir -name "*.log" -type f -mtime +$days)
 
-echo "$files_to_delete"
-
 if [ -z "$files_to_delete" ]; then
-    echo "No log files found older than +$days"  
+    echo "No log files found older than $days"
     exit 0
 fi
 
-while IFS= read -r line 
+while IFS= read -r line
 do
-    echo "File is goining to be deleted : $line"
-    rm -f "$line"
+    echo "File is going to be deleted: $line"
+    rm -f $line
     echo "File deleted: $line"
-done <<< "$fileS_to_delete"
+done <<< "$files_to_delete"
 
+# < -> for file inputs
+# <<< -> variable as input
