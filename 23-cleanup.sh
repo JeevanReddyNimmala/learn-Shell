@@ -34,7 +34,7 @@ if [ -z "$files_to_delete" ]; then
 fi
 
 while IFS= read -r line
-   do
+do
         echo "File is goining to be deleted $line"
-    done <<< "$fileS_to_delete"
+done <<< "$fileS_to_delete"
 
