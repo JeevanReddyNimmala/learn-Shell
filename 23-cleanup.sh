@@ -35,6 +35,6 @@ fi
 
 while IFS= read -r line
 do
-        echo "File is goining to be deleted : $line"
+        echo "File is goining to be deleted : "$line""
 done <<< "$fileS_to_delete"
 
