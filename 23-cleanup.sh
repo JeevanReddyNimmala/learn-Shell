@@ -18,5 +18,8 @@ if [ -z "$source_dir" ] ; then
 fi
 
 if [ ! -d "$source_dir" ] ; then
-    echo -e "ERROR :: ${R} "$source_dir" doe not exists${N}"
+    echo -e "ERROR :: ${R} "$source_dir" directory does not exists${N}"
 fi
+
+echo "Scaning files older than " $days" in "$source_dir" directory"
+files_to_delete=$( find "$source_dir" -name "*.log" -type f -mtime +14)
