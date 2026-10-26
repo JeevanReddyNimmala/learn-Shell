@@ -23,6 +23,7 @@ if [ ! -d "$source_dir" ] ; then
 fi
 
 echo "Scaning files older than " $days" in "$source_dir" directory"
+
 files_to_delete=$( find "$source_dir" -name "*.log" -type f -mtime $days)
 
 if [ -z $files_to_delete ] ; then
@@ -34,5 +35,5 @@ while IFS=read -r line
 
     do
         echo "File is goining to be deleted $line"
-    done <<< "$file_to_delete"
+    done <<< "$fileS_to_delete"
 
