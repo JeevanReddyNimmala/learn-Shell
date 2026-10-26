@@ -23,3 +23,4 @@ fi
 
 echo "Scaning files older than " $days" in "$source_dir" directory"
 files_to_delete=$( find "$source_dir" -name "*.log" -type f -mtime +14)
+echo "$files_to_delete"
