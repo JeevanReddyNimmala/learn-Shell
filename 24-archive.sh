@@ -13,7 +13,7 @@ usage(){
 }
 
 
-if [ -z "source_dir"] || [ -z "des-dir" ] ; then
+if [ -z "source_dir" ] || [ -z "des-dir" ]; then
     echo "Either sour or destination dir is empty"
     usage
 fi    
