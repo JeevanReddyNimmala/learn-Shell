@@ -8,13 +8,13 @@ do
     usage=$(echo $line | awk '{print $6}' | cut -d '%' -f1)
     partition=$(echo $line | awk '{print $7}')
 if [ "$usage" -ge "$usage_threeshold" ]; then
-     message+="High Disk utilaisation on $partition:$usage \n" 
+     message+=("High Disk utilaisation on $partition:$usage \n")
 fi  
 
 done <<< "$disk_usage"
 
 echo -e "$message"
 
-sh 26-mail.sh "Devops_Team" "$server_ip" "High Disk Usage" "$message" "$to_address" "WARNING:High Disk Usage Alert!"
+sh 26-mail.sh "Devops_Team" "$server_ip" "High Disk Usage" "$message" "jeevanreddydotcom@gmail.com" "WARNING:High Disk Usage Alert!"
 
 
