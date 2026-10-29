@@ -1,4 +1,4 @@
-!#bin/bash
+#!/bin/bash
 
 team_name=$1
 server_ip=$2
