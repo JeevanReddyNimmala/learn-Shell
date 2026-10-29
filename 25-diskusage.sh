@@ -2,7 +2,7 @@
 
 disk_usage=$(df -hT | grep -v Filesyestem)
 
-while IFS read -r line
+while IFS= read -r line
 do
 echo "$line"
 
