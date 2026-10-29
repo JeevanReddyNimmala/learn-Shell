@@ -11,5 +11,6 @@ if [ "$usage" -ge "$usage_threeshold"  ]; then
      message+="High Disk utilaisation on "$partition":"$usage"  \n" 
 fi  
 
-echo "$message"
 done <<< "$disk_usage"
+
+echo "$message"
