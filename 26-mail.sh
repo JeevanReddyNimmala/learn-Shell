@@ -9,7 +9,7 @@ subject=$6
 
 final_messsage=$(echo "$message" | sed 's:[[\.*^$/&]:\\&:g')
 
-final_body=$(sed -e "s/TO_TEAM/$team_name/g" -e "s/ALERT_TYPE/$alert_type /g" -e "s/SERVER_IP/$server_ip/g" -e "s/MESSEGE_BODY/$fainal_messege/g" template.html)
+final_body=$(sed -e "s/TO_TEAM/$team_name/g" -e "s/ALERT_TYPE/$alert_type/g" -e "s/SERVER_IP/$server_ip/g" -e "s/MESSEGE_BODY/$fainal_messege/g" template.html)
 {
 echo "To: $to_address"
 echo "Subject: $subject"
