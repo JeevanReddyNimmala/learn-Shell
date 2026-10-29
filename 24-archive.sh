@@ -13,7 +13,7 @@ usage(){
 }
 
 
-if [ -z "source_dir" ] || [ -z "des-dir" ]; then
+if [ -z "$source_dir" ] || [ -z "$des-dir" ]; then
     echo "Either sour or destination dir is empty"
     usage
 fi    
@@ -35,7 +35,7 @@ if [ -z "$files_to_archive" ]; then
 fi
 timestamp=$(date +%Y-%m-%d-%H-%M-%S)
 file_name="$des_dir/log-$timestamp.tar.gz"
-tar -caf $file_name $files_to_archive
+tar -czf $file_name $files_to_archive
 if [ $? -ne 0] ; then
 
     echo "logs Archieve failed $file_name"
@@ -50,4 +50,5 @@ do
     rm -f $line
     echo "File deleted: $line"
 done <<< "$files_to_archive"
+fi
 
