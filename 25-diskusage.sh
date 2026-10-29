@@ -7,9 +7,9 @@ do
     usage=$(echo $line | awk '{print $6}' | cut -d '%' -f1)
     partition=$(echo $line | awk '{print $7}')
 if [ "$usage" -ge "$usage_threeshold" ]; then
-     message+="High Disk utilaisation on "$partition":"$usage"  \n" 
+     message+="High Disk utilaisation on $partition:$usage \n" 
 fi  
 
 done <<< "$disk_usage"
 
-echo "$message"
+echo -e "$message"
