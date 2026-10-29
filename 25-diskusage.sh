@@ -1,8 +1,8 @@
 #!bin/bash
 
-disk_usage=$(df -hT | grep -v Filesyestem)
+disk_usage=$(df -hT | grep -v Filesystem)
 usage_threeshold=20
-server_ip=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)
+server_ip=$(curl -s http://169.254.169.254/latest/meta-data/local-ipv4)
 while IFS= read -r line
 do
     usage=$(echo $line | awk '{print $6}' | cut -d '%' -f1)
