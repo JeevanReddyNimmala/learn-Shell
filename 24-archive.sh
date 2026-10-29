@@ -25,3 +25,29 @@ fi
 if [ ! -d "$des_dir" ]; then
     echo -e "${R}ERROR:: Destination Directory  $des_dir does not exist${N}"
 fi
+
+echo "Scanning files older than $days in $source_dir"
+files_to_archive=$(find $source_dir -name "*.log" -type f -mtime +$days)
+
+if [ -z "$files_to_archive" ]; then
+    echo "No log files found older than $days"
+    exit 0
+fi
+timestamp=$(date +%Y-%m-%d-%H-%M-%S)
+file_name="$des_dir/log-$timestamp.tar.gz"
+tar -caf $file_name $files_to_archive
+if [ $? -ne 0] ; then
+
+    echo "logs Archieve failed $file_name"
+    exit 1
+else
+    echo "logs are archived"
+
+while IFS= read -r line
+do
+    echo "File is moved : $line"
+    cp $line $des_dir
+    rm -f $line
+    echo "File deleted: $line"
+done <<< "$files_to_archive"
+
